@@ -2,6 +2,8 @@
 
 定时自动获取 `施王智慧房东` 小程序上的水电剩余量，并通过邮件通知
 
+![](assets/2024-01-09-17-34-17-image.png)
+
 ## 使用方法
 
 1. 配置
@@ -19,10 +21,8 @@
 在项目根目录中，运行命令启动程序：
 
 ```shell
-
 docker-compose up -d --build
 
 # or
 docker compose up -d --build
-
 ```
