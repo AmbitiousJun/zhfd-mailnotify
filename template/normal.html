@@ -9,78 +9,29 @@
 
 <body>
 
-    <div class="container">
+    <div class="container" style="font-size: 14px;">
         <span class="electric-quantity">
-            <span class="highlight-electric iconfont icon-electric"> </span>
+            <img style="width: 14px; height: 14px" src="https://i.ibb.co/zXjCDFf/image.png" alt="电量图标" />
             剩余电量：
-            <span class="highlight-electric">${electricQuantity}°</span>
+            <span style="color: #ffac6c">${electricQuantity}°</span>
         </span>
 
         <br />
 
         <span class="cold-water">
-            <span class="highlight-cold iconfont icon-cold"> </span>
+            <img style="width: 14px; height: 14px" src="https://i.ibb.co/cDVwbc0/image.png" alt="冷水图标" />
             剩余冷水量：
-            <span class="highlight-cold">${coldWater}（吨）</span>
+            <span style="color: #5cc2e4">${coldWater}（吨）</span>
         </span>
 
         <br />
 
         <span class="hot-water">
-            <span class="highlight-hot iconfont icon-hot"> </span>
+            <img style="width: 14px; height: 14px" src="https://i.ibb.co/xDCkDTV/image.png" alt="热水图标" />
             剩余热水量：
-            <span class="highlight-hot">${hotWater}（吨）</span>
+            <span style="color: #f46267">${hotWater}（吨）</span>
         </span>
     </div>
 </body>
-
-<style>
-
-    @font-face {
-        font-family: "iconfont";
-        /* Project id 4404922 */
-        src: url('//at.alicdn.com/t/c/font_4404922_1fqocxxz5t5.woff2?t=1704788286699') format('woff2'),
-            url('//at.alicdn.com/t/c/font_4404922_1fqocxxz5t5.woff?t=1704788286699') format('woff'),
-            url('//at.alicdn.com/t/c/font_4404922_1fqocxxz5t5.ttf?t=1704788286699') format('truetype');
-    }
-
-    .iconfont {
-        font-family: "iconfont" !important;
-        font-size: 16px;
-        font-style: normal;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    .icon-hot:before {
-        content: "\e601";
-    }
-
-    .icon-cold:before {
-        content: "\e605";
-    }
-
-    .icon-electric:before {
-        content: "\e65f";
-    }
-
-    /* 自定义属性 */
-
-    .container {
-        font-size: 14px;
-    }
-
-    .highlight-electric {
-        color: #ffac6c;
-    }
-
-    .highlight-cold {
-        color: #5cc2e4;
-    }
-
-    .highlight-hot {
-        color: #f46267;
-    }
-</style>
 
 </html>
