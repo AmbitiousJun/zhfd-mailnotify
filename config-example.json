@@ -1,0 +1,23 @@
+{
+    "smtp": {
+        "host": "smtp.qq.com",
+        "port": 587,
+        "username": "发件人邮箱",
+        "credential": "发件人邮箱授权码"
+    },
+    "mail": {
+        "from": "发件人邮箱",
+        "to": [
+            "收件人邮箱1",
+            "收件人邮箱2"
+        ],
+        "subject": "邮件主题"
+    },
+    "cron": "定时器触发时间的 cron 表达式, 例：晚上 9 点触发（0 21 * * *）",
+    "zhfd": {
+        "requestUrl": "https://wx.zhihuifangdong.net/core/app/rentExt/rentHouseInfoHb?current=1&size=1",
+        "referer": "https://servicewechat.com/wx2a21613acdc668a5/148/page-frame.html",
+        "host": "wx.zhihuifangdong.net",
+        "authorization": "你自己的 token，可利用手机的抓包工具抓"
+    }
+}
