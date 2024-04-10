@@ -35,6 +35,9 @@ type Config struct {
 		Host          string `json:"host"`
 		Authorization string `json:"authorization"`
 	} `json:"zhfd"`
+
+	// 部署应用的服务器 ip 地址
+	ServerIp string `json:"serverIp"`
 }
 
 func (c *Config) String() string {

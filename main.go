@@ -14,6 +14,8 @@ import (
 	"github.com/AmbitiousJun/go-mailscheduler"
 )
 
+var MailSchedulerCache *mailscheduler.Scheduler
+
 func main() {
 	log.Println("正在读取配置文件...")
 	cfg, err := ReadConfig(false)
@@ -68,6 +70,7 @@ func main() {
 
 	ms.Start()
 	log.Println("定时器启动成功 (*^▽^*)")
+	MailSchedulerCache = ms
 
 	// 阻塞主协程
 	select {}
@@ -117,10 +120,19 @@ func BuildBody(fallbackErr *error, builder *HtmlBuilder) (mailscheduler.MailBody
 			}
 		}()
 
+		// 更新 token 为缓存中的最新值
+		request.Header.Set("Authorization", cfg.Zhfd.Authorization)
+
 		// 执行请求
 		response, err := client.Do(request)
 		if err != nil {
 			return "", errors.Join(err, errors.New("请求失败"))
+		}
+
+		// 如果是 401 异常，需要发邮件通知用户刷新 token 令牌
+		if response.StatusCode == http.StatusUnauthorized {
+			refreshUrl := fmt.Sprintf("http://%s:54321/config-refresh?re-send-mail=1&auth=", cfg.ServerIp)
+			return "", fmt.Errorf("请求失败, token 过期, 请在以下链接上拼接最新 token 后访问该链接刷新 token: \n%s", refreshUrl)
 		}
 
 		// 分析请求是否成功

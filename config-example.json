@@ -19,5 +19,6 @@
         "referer": "https://servicewechat.com/wx2a21613acdc668a5/148/page-frame.html",
         "host": "wx.zhihuifangdong.net",
         "authorization": "你自己的 token，可利用手机的抓包工具抓"
-    }
+    },
+    "serverIP": "127.0.0.1"
 }

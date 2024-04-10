@@ -8,3 +8,5 @@ services:
     volumes:
       - ./template:/usr/src/app/template
       - ./config.json:/usr/src/app/config.json
+    ports:
+      - "54321:54321"

@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN go env -w GOPROXY=https://goproxy.cn
 
 # change timezone
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN cp Shanghai /etc/localtime
 
 # pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
 COPY go.mod go.sum ./
